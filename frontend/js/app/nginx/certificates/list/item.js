@@ -1,10 +1,10 @@
-const Mn            = require('backbone.marionette');
-const moment        = require('moment');
-const App           = require('../../../main');
-const template      = require('./item.ejs');
-const dns_providers = require('../../../../../../global/certbot-dns-plugins');
+import { View }       from 'backbone.marionette';
+import moment         from 'moment';
+import App            from '../../../main';
+import template       from './item.ejs';
+import dns_providers  from '../../../../../../global/certbot-dns-plugins';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template: template,
     tagName:  'tr',
 

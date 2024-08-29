@@ -1,12 +1,12 @@
-const Mn            = require('backbone.marionette');
-const App           = require('../main');
-const AuditLogModel = require('../../models/audit-log');
-const ListView      = require('./list/main');
-const template      = require('./main.ejs');
-const ErrorView     = require('../error/main');
-const EmptyView     = require('../empty/main');
+import { View }       from 'backbone.marionette';
+import App            from '../main';
+import AuditLogModel  from '../../models/audit-log';
+import ListView       from './list/main';
+import template       from './main.ejs';
+import ErrorView      from '../error/main';
+import EmptyView      from '../empty/main';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:       'audit-log',
     template: template,
 

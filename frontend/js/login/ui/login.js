@@ -1,10 +1,10 @@
-const $        = require('jquery');
-const Mn       = require('backbone.marionette');
-const template = require('./login.ejs');
-const Api      = require('../../app/api');
-const i18n     = require('../../app/i18n');
+import $         from 'jquery';
+import { View } from 'backbone.marionette';
+import template  from './login.ejs';
+import Api       from '../../app/api';
+import i18n      from '../../app/i18n';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'page-single',
 

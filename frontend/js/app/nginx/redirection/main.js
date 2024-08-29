@@ -1,53 +1,53 @@
-const Mn                   = require('backbone.marionette');
-const App                  = require('../../main');
-const RedirectionHostModel = require('../../../models/redirection-host');
-const ListView             = require('./list/main');
-const ErrorView            = require('../../error/main');
-const EmptyView            = require('../../empty/main');
-const template             = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import App from '../../main';
+import RedirectionHostModel from '../../../models/redirection-host';
+import ListView from './list/main';
+import ErrorView from '../../error/main';
+import EmptyView from '../../empty/main';
+import template from './main.ejs';
 
-module.exports = Mn.View.extend({
-    id:       'nginx-redirection',
+export default View.extend({
+    id: 'nginx-redirection',
     template: template,
 
     ui: {
         list_region: '.list-region',
-        add:         '.add-item',
-        help:        '.help',
-        dimmer:      '.dimmer',
-        search:      '.search-form',
-        query:       'input[name="source-query"]'
+        add: '.add-item',
+        help: '.help',
+        dimmer: '.dimmer',
+        search: '.search-form',
+        query: 'input[name="source-query"]'
     },
 
     fetch: App.Api.Nginx.RedirectionHosts.getAll,
 
-    showData: function(response) {
+    showData(response) {
         this.showChildView('list_region', new ListView({
             collection: new RedirectionHostModel.Collection(response)
         }));
     },
 
-    showError: function(err) {
+    showError(err) {
         this.showChildView('list_region', new ErrorView({
-            code:    err.code,
+            code: err.code,
             message: err.message,
-            retry:   function () {
+            retry: function () {
                 App.Controller.showNginxRedirection();
             }
         }));
         console.error(err);
     },
 
-    showEmpty: function() {
+    showEmpty() {
         let manage = App.Cache.User.canManage('redirection_hosts');
 
         this.showChildView('list_region', new EmptyView({
-            title:      App.i18n('redirection-hosts', 'empty'),
-            subtitle:   App.i18n('all-hosts', 'empty-subtitle', {manage: manage}),
-            link:       manage ? App.i18n('redirection-hosts', 'add') : null,
-            btn_color:  'yellow',
+            title: App.i18n('redirection-hosts', 'empty'),
+            subtitle: App.i18n('all-hosts', 'empty-subtitle', { manage: manage }),
+            link: manage ? App.i18n('redirection-hosts', 'add') : null,
+            btn_color: 'yellow',
             permission: 'redirection_hosts',
-            action:     function () {
+            action: function () {
                 App.Controller.showNginxRedirectionForm();
             }
         }));
@@ -84,7 +84,7 @@ module.exports = Mn.View.extend({
         showAddButton: App.Cache.User.canManage('proxy_hosts')
     },
 
-    onRender: function () {
+    onRender() {
         let view = this;
 
         view.fetch(['owner', 'certificate'])

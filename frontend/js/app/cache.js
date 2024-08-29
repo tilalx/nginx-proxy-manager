@@ -1,4 +1,4 @@
-const UserModel = require('../models/user');
+import UserModel  from '../models/user';
 
 let cache = {
     User:    new UserModel.Model(),
@@ -6,5 +6,5 @@ let cache = {
     version: null
 };
 
-module.exports = cache;
+export default cache;
 

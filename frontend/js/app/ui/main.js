@@ -1,11 +1,11 @@
-const Mn         = require('backbone.marionette');
-const template   = require('./main.ejs');
-const HeaderView = require('./header/main');
-const MenuView   = require('./menu/main');
-const FooterView = require('./footer/main');
-const Cache      = require('../cache');
+import { View } from 'backbone.marionette';
+import template    from './main.ejs';
+import HeaderView  from './header/main';
+import MenuView    from './menu/main';
+import FooterView  from './footer/main';
+import Cache       from '../cache';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:          'app',
     className:   'page',
     template:    template,

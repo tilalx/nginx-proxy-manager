@@ -1,12 +1,12 @@
-const Mn          = require('backbone.marionette');
-const App         = require('../../main');
-const StreamModel = require('../../../models/stream');
-const ListView    = require('./list/main');
-const ErrorView   = require('../../error/main');
-const EmptyView   = require('../../empty/main');
-const template    = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import App          from '../../main';
+import StreamModel  from '../../../models/stream';
+import ListView     from './list/main';
+import ErrorView    from '../../error/main';
+import EmptyView    from '../../empty/main';
+import template     from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:       'nginx-stream',
     template: template,
 

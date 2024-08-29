@@ -1,0 +1,11 @@
+services:
+  app:
+    image: 'nginx-proxy-manager:unknown-ci-0000'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt

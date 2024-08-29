@@ -1,8 +1,8 @@
-const Backbone = require('backbone');
-const Cache    = require('./cache');
-const Tokens   = require('./tokens');
+import Backbone  from 'backbone';
+import Cache     from './cache';
+import Tokens    from './tokens';
 
-module.exports = {
+export default {
 
     /**
      * @param {String} route

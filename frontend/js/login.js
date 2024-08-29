@@ -1,5 +1,5 @@
-const App = require('./login/main');
+import App from './login/main';
 
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
     App.start();
 });

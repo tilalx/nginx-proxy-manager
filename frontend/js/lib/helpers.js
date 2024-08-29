@@ -1,7 +1,7 @@
-const numeral = require('numeral');
-const moment  = require('moment');
+import numeral  from 'numeral';
+import moment   from 'moment';
 
-module.exports = {
+export default {
 
     /**
      * @param   {Integer} number

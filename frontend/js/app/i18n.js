@@ -1,23 +1,27 @@
-const Cache    = ('./cache');
-const messages = require('../i18n/messages.json');
+import Cache from './cache';
+import messages from '../i18n/messages.json';
 
 /**
- * @param {String}  namespace
- * @param {String}  key
- * @param {Object}  [data]
+ * @param {string}  namespace
+ * @param {string}  key
+ * @param {object}  [data]
+ * @returns {string}
  */
-module.exports = function (namespace, key, data) {
+const i18n = function (namespace, key, data = {}) {
     let locale = Cache.locale;
     // check that the locale exists
     if (typeof messages[locale] === 'undefined') {
         locale = 'en';
     }
 
-    if (typeof messages[locale][namespace] !== 'undefined' && typeof messages[locale][namespace][key] !== 'undefined') {
-        return messages[locale][namespace][key](data);
-    } else if (locale !== 'en' && typeof messages['en'][namespace] !== 'undefined' && typeof messages['en'][namespace][key] !== 'undefined') {
-        return messages['en'][namespace][key](data);
+    let message = messages[locale]?.[namespace]?.[key] || messages['en']?.[namespace]?.[key];
+
+    if (typeof message === 'string') {
+        message = message.replace(/{(\w+)}/g, (_, placeholder) => data[placeholder] || `{${placeholder}}`);
+        return message;
     }
 
-    return '(MISSING: ' + namespace + '/' + key + ')';
-};
+    return `(MISSING: ${namespace}/${key})`;
+}
+
+export default i18n

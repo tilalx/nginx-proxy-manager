@@ -1,8 +1,8 @@
-const Mn       = require('backbone.marionette');
-const App      = require('../../main');
-const template = require('./delete.ejs');
+import { View } from 'backbone.marionette';
+import App       from '../../main';
+import template  from './delete.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

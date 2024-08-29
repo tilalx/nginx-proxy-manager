@@ -123,4 +123,4 @@ const Tokens = {
 
 };
 
-module.exports = Tokens;
+export default Tokens;

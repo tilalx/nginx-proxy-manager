@@ -1,12 +1,12 @@
-const Mn            = require('backbone.marionette');
-const App           = require('../../main');
-const DeadHostModel = require('../../../models/dead-host');
-const ListView      = require('./list/main');
-const ErrorView     = require('../../error/main');
-const EmptyView     = require('../../empty/main');
-const template      = require('./main.ejs');
+import { View }       from 'backbone.marionette';
+import App            from '../../main';
+import DeadHostModel  from '../../../models/dead-host';
+import ListView       from './list/main';
+import ErrorView      from '../../error/main';
+import EmptyView      from '../../empty/main';
+import template       from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:       'nginx-dead',
     template: template,
 

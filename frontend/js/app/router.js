@@ -1,7 +1,7 @@
-const AppRouter  = require('marionette.approuter');
-const Controller = require('./controller');
+import AppRouter   from 'marionette.approuter';
+import Controller  from './controller';
 
-module.exports = AppRouter.default.extend({
+export default AppRouter.extend({
     controller: Controller,
     appRoutes:  {
         users:                'showUsers',

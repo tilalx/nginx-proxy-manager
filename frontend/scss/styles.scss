@@ -1,8 +1,8 @@
-@import "~tabler-ui/dist/assets/css/dashboard";
 @import "tabler-extra";
 @import "fonts";
 @import "selectize";
 @import "custom";
+@import 'tabler.css';
 
 /* Before any JS content is loaded */
 #app > .loader, #login > .loader, .container > .loader {

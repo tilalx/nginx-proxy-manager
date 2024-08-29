@@ -1,12 +1,12 @@
-const $          = require('jquery');
-const Mn         = require('backbone.marionette');
-const i18n       = require('../../i18n');
-const Cache      = require('../../cache');
-const Controller = require('../../controller');
-const Tokens     = require('../../tokens');
-const template   = require('./main.ejs');
+import $           from 'jquery';
+import { View } from 'backbone.marionette';
+import i18n        from '../../i18n';
+import Cache       from '../../cache';
+import Controller  from '../../controller';
+import Tokens      from '../../tokens';
+import template    from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:        'header',
     className: 'header',
     template:  template,

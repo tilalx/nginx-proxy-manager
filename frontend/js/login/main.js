@@ -1,5 +1,5 @@
-const Mn        = require('backbone.marionette');
-const LoginView = require('./ui/login');
+import Mn         from 'backbone.marionette'
+import LoginView  from './ui/login'
 
 const App = Mn.Application.extend({
     region: '#login',
@@ -11,4 +11,4 @@ const App = Mn.Application.extend({
 });
 
 const app      = new App();
-module.exports = app;
+export default app;

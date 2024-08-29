@@ -1,9 +1,9 @@
-const Mn              = require('backbone.marionette');
-const App             = require('../../main');
-const AccessListModel = require('../../../models/access-list');
-const template        = require('./form.ejs');
-const ItemView        = require('./form/item');
-const ClientView      = require('./form/client');
+import { View } from 'backbone.marionette';
+import App              from '../../main';
+import AccessListModel  from '../../../models/access-list';
+import template         from './form.ejs';
+import ItemView         from './form/item';
+import ClientView       from './form/client';
 
 require('jquery-serializejson');
 
@@ -15,7 +15,7 @@ const ClientsView = Mn.CollectionView.extend({
     childView: ClientView
 });
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

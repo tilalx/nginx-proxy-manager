@@ -1,11 +1,11 @@
-const Mn         = require('backbone.marionette');
-const Cache      = require('../cache');
-const Controller = require('../controller');
-const Api        = require('../api');
-const Helpers    = require('../../lib/helpers');
-const template   = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import Cache       from '../cache';
+import Controller  from '../controller';
+import Api         from '../api';
+import Helpers     from '../../lib/helpers';
+import template    from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template: template,
     id:       'dashboard',
     columns:  0,

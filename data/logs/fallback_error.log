@@ -1,0 +1,1 @@
+2024/08/28 18:04:07 [error] 183#183: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "localhost:81", referrer: "http://localhost:81/"

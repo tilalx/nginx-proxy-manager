@@ -1,13 +1,13 @@
-const _                = require('underscore');
-const Mn               = require('backbone.marionette');
-const App              = require('../../main');
-const CertificateModel = require('../../../models/certificate');
-const template         = require('./form.ejs');
-const i18n             = require('../../i18n');
+import _                 from 'underscore';
+import { View } from 'backbone.marionette';
+import App               from '../../main';
+import CertificateModel  from '../../../models/certificate';
+import template          from './form.ejs';
+import i18n              from '../../i18n';
 const dns_providers    = sortProvidersAlphabetically(require('../../../../../global/certbot-dns-plugins'));
 
 require('jquery-serializejson');
-require('selectize');
+require('@selectize/selectize');
 
 function sortProvidersAlphabetically(obj) {
     return Object.entries(obj)
@@ -18,7 +18,7 @@ function sortProvidersAlphabetically(obj) {
         }, {});
 }
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:      template,
     className:     'modal-dialog',
     max_file_size: 102400,

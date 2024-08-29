@@ -1,14 +1,14 @@
-const Mn       = require('backbone.marionette');
-const App      = require('../../../main');
-const ItemView = require('./item');
-const template = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import App       from '../../../main';
+import ItemView  from './item';
+import template  from './main.ejs';
 
 const TableBody = Mn.CollectionView.extend({
     tagName:   'tbody',
     childView: ItemView
 });
 
-module.exports = Mn.View.extend({
+export default View.extend({
     tagName:   'table',
     className: 'table table-hover table-outline table-vcenter card-table',
     template:  template,

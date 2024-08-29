@@ -1,6 +1,6 @@
-const locationItemTemplate   = require('./location-item.ejs');
-const Mn                     = require('backbone.marionette');
-const App                    = require('../../main');
+import locationItemTemplate    from './location-item.ejs';
+import { View } from 'backbone.marionette';
+import App                     from '../../main';
 
 const LocationView = Mn.View.extend({
     template: locationItemTemplate,
@@ -48,7 +48,7 @@ const LocationCollectionView = Mn.CollectionView.extend({
     childView: LocationView
 });
 
-module.exports = {
+export default {
     LocationCollectionView,
     LocationView
 }

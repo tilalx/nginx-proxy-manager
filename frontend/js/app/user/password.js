@@ -1,10 +1,10 @@
-const Mn       = require('backbone.marionette');
-const App      = require('../main');
-const template = require('./password.ejs');
+import { View } from 'backbone.marionette';
+import App       from '../main';
+import template  from './password.ejs';
 
 require('jquery-serializejson');
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

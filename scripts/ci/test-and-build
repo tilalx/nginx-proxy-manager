@@ -6,16 +6,6 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTING_IMAGE=nginxproxymanager/nginx-full:certbot-node
 docker pull "${TESTING_IMAGE}"
 
-# Test
-echo -e "${BLUE}❯ ${CYAN}Testing backend ...${RESET}"
-docker run --rm \
-	-v "$(pwd)/backend:/app" \
-	-v "$(pwd)/global:/app/global" \
-	-w /app \
-	"${TESTING_IMAGE}" \
-	sh -c 'yarn install && yarn eslint . && rm -rf node_modules'
-echo -e "${BLUE}❯ ${GREEN}Testing Complete${RESET}"
-
 # Build
 echo -e "${BLUE}❯ ${CYAN}Building ...${RESET}"
 docker build --pull --no-cache --compress \

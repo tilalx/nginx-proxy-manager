@@ -1,16 +1,16 @@
-const Mn                   = require('backbone.marionette');
-const App                  = require('../../main');
-const DeadHostModel        = require('../../../models/dead-host');
-const template             = require('./form.ejs');
-const certListItemTemplate = require('../certificates-list-item.ejs');
-const Helpers              = require('../../../lib/helpers');
-const i18n                 = require('../../i18n');
-const dns_providers        = require('../../../../../global/certbot-dns-plugins');
+import { View } from 'backbone.marionette';
+import App                   from '../../main';
+import DeadHostModel         from '../../../models/dead-host';
+import template              from './form.ejs';
+import certListItemTemplate  from '../certificates-list-item.ejs';
+import Helpers               from '../../../lib/helpers';
+import i18n                  from '../../i18n';
+import dns_providers         from '../../../../../global/certbot-dns-plugins';
 
 require('jquery-serializejson');
-require('selectize');
+require('@selectize/selectize');
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

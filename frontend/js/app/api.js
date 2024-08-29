@@ -1,6 +1,6 @@
-const $      = require('jquery');
-const _      = require('underscore');
-const Tokens = require('./tokens');
+import $       from 'jquery';
+import _       from 'underscore';
+import Tokens  from './tokens';
 
 /**
  * @param {String}  message
@@ -197,7 +197,7 @@ function DownloadFile(verb, path, filename) {
     });
 }
 
-module.exports = {
+export default {
     status: function () {
         return fetch('get', '');
     },

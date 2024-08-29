@@ -1,10 +1,10 @@
-const $          = require('jquery');
-const Mn         = require('backbone.marionette');
-const Controller = require('../../controller');
-const Cache      = require('../../cache');
-const template   = require('./main.ejs');
+import $           from 'jquery';
+import { View } from 'backbone.marionette';
+import Controller  from '../../controller';
+import Cache       from '../../cache';
+import template    from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:        'menu',
     className: 'header collapse d-lg-flex p-0',
     template:  template,

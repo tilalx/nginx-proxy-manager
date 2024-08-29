@@ -1,13 +1,13 @@
-const Mn          = require('backbone.marionette');
-const App         = require('../../main');
-const StreamModel = require('../../../models/stream');
-const template    = require('./form.ejs');
+import { View } from 'backbone.marionette';
+import App          from '../../main';
+import StreamModel  from '../../../models/stream';
+import template     from './form.ejs';
 
 require('jquery-serializejson');
 require('jquery-mask-plugin');
-require('selectize');
+require('@selectize/selectize');
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

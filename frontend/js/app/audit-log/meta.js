@@ -1,7 +1,7 @@
-const Mn       = require('backbone.marionette');
-const template = require('./meta.ejs');
+import { View } from 'backbone.marionette';
+import template  from './meta.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog wide'
 });

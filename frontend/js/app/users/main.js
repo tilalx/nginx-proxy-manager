@@ -1,11 +1,11 @@
-const Mn        = require('backbone.marionette');
-const App       = require('../main');
-const UserModel = require('../../models/user');
-const ListView  = require('./list/main');
-const ErrorView = require('../error/main');
-const template  = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import App        from '../main';
+import UserModel  from '../../models/user';
+import ListView   from './list/main';
+import ErrorView  from '../error/main';
+import template   from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     id:       'users',
     template: template,
 

@@ -1,10 +1,10 @@
-const Mn       = require('backbone.marionette');
-const template = require('./delete.ejs');
-const App      = require('../main');
+import { View } from 'backbone.marionette';
+import template  from './delete.ejs';
+import App       from '../main';
 
 require('jquery-serializejson');
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'modal-dialog',
 

@@ -1,7 +1,7 @@
-const Mn       = require('backbone.marionette');
-const template = require('./main.ejs');
+import { View } from 'backbone.marionette';
+import template  from './main.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template:  template,
     className: 'alert alert-icon alert-warning m-5',
 

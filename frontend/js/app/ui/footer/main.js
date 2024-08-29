@@ -1,8 +1,8 @@
-const Mn       = require('backbone.marionette');
-const template = require('./main.ejs');
-const Cache    = require('../../cache');
+import { View } from 'backbone.marionette';
+import template  from './main.ejs';
+import Cache     from '../../cache';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     className: 'container',
     template:  template,
 

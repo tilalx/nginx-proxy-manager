@@ -40,7 +40,8 @@ COPY frontend/dist /app/frontend
 COPY global        /app/global
 
 WORKDIR /app
-RUN yarn install \
+RUN yarn set version berry \
+	&& yarn install \
 	&& yarn cache clean
 
 # add late to limit cache-busting by modifications

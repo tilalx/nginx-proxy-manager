@@ -1,13 +1,13 @@
-const _          = require('underscore');
-const Backbone   = require('backbone');
-const Mn         = require('../lib/marionette');
-const Cache      = require('./cache');
-const Controller = require('./controller');
-const Router     = require('./router');
-const Api        = require('./api');
-const Tokens     = require('./tokens');
-const UI         = require('./ui/main');
-const i18n       = require('./i18n');
+import _           from 'underscore'
+import Backbone    from 'backbone'
+import Mn          from '../lib/marionette'
+import Cache       from './cache'
+import Controller  from './controller'
+import Router      from './router'
+import Api         from './api'
+import Tokens      from './tokens'
+import UI          from './ui/main'
+import i18n        from './i18n'
 
 const App = Mn.Application.extend({
 
@@ -56,7 +56,8 @@ const App = Mn.Application.extend({
                 this.getRegion().show(this.UI);
             })
             .catch(err => {
-                console.warn('Not logged in:', err.message);
+                console.warn(typeof i18n)
+                console.warn('Not logged in:', err);
                 Controller.showLogin();
             });
     },
@@ -152,4 +153,4 @@ const App = Mn.Application.extend({
 });
 
 const app      = new App();
-module.exports = app;
+export default app;

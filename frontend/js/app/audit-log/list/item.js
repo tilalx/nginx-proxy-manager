@@ -1,8 +1,8 @@
-const Mn         = require('backbone.marionette');
-const Controller = require('../../controller');
-const template   = require('./item.ejs');
+import { View } from 'backbone.marionette';
+import Controller  from '../../controller';
+import template    from './item.ejs';
 
-module.exports = Mn.View.extend({
+export default View.extend({
     template: template,
     tagName:  'tr',
 

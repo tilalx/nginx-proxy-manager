@@ -1,4 +1,4 @@
-const Backbone = require('backbone');
+import Backbone  from 'backbone';
 
 const model = Backbone.Model.extend({
     idAttribute: 'id',
@@ -30,7 +30,7 @@ const model = Backbone.Model.extend({
     }
 });
 
-module.exports = {
+export default {
     Model:      model,
     Collection: Backbone.Collection.extend({
         model: model
